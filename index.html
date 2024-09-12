@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Category Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.zmescience.com/wp-content/uploads/2023/11/DALL%C2%B7E-2023-11-15-12.17.55-A-landscape-vector-art-illustration-showing-a-stylized-depiction-of-the-GraphCast-AI-system-for-weather-forecasting.-The-image-should-include-imagery-.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="number"] {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            step: 0.01;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Category Prediction</h1>
+        <form method="POST">
+            <input type="number" id="Temperature" name="Temperature" placeholder="Enter Temperature (°C)" step="any" required>
+            <input type="number" id="Dew_Point" name="Dew_Point" placeholder="Enter Dew Point Temp (°C)" step="any" required>
+            <input type="number" id="Humidity" name="Humidity" placeholder="Enter Relative Humidity (%)" step="any" required>
+            <input type="number" id="Wind_Speed" name="Wind_Speed" placeholder="Enter Wind Speed (km/h)" step="any" required>
+            <input type="number" id="Visibility" name="Visibility" placeholder="Enter Visibility (km)" step="any" required>
+            <input type="number" id="Pressure" name="Pressure" placeholder="Enter Pressure (kPa)" step="any" required>
+            <button type="submit">Predict Weather Category</button>
+        </form>
+        {% if prediction %}
+        <div class="result">
+            Predicted Weather Category: {{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
